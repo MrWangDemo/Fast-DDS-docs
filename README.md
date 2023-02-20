@@ -200,6 +200,16 @@ READTHEDOCS=True FASTDDS_BRANCH=<branch> FASTDDS_PYTHON_BRANCH=<branch> sphinx-b
     -d <abs_path_to_docs_repo>/fastdds-docs/build/doctrees \
     docs <abs_path_to_docs_repo>/fastdds-docs/build/html
 ```
+```bash
+source <path_to_venv>/fastdds-docs-venv/bin/activate
+cd <path_to_docs_repo>/fastdds-docs
+rm -rf build
+READTHEDOCS=True sphinx-build \
+    -b html \
+    -D breathe_projects.FastDDS=/mnt/d/workspace/Fast-DDS-docs/fastdds-docs/build/doxygen/xml \
+    -d /mnt/d/workspace/Fast-DDS-docs/fastdds-docs/build/doctrees \
+    docs /mnt/d/workspace/Fast-DDS-docs/fastdds-docs/build/html
+```
 
 ### Generating documentation in other formats
 
